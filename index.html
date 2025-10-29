@@ -3,30 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD</title>
+    <title>CRUD John vs Mike</title>
 </head>
 <body>
-    <h1>Treinando CRUD</h1>
-    <h2>Confira abaixo todos os IDs e Usuários cadastrados.</h2>
-    <div id="get-container"></div>
+    <h1>Exercícios CRUD John vs Mike</h1>
 
-    <h1>Método POST</h1>
-    <h2>Adicione um novo usuário abaixo:</h2>
-    <input id="novoId" placeholder="Novo ID"><br>
-    <textarea id="novoNome" placeholder="Nome"></textarea><br>
-    <button id="enviarPost">Adicionar Usuário</button>
+    <div id="formulario">
+        <h2>Preencha os dados do úsuario nos campos abaixo:</h2>
+        <input id="novoNome" placeholder="Nome"><br>
+        <input id="novoTelefone" placeholder="telefone"><br>
+        <input id="novoCpf" placeholder="CPF"><br>
+        <button id="enviarPOST">Enviar</button>
+    </div>
 
-    <h1>Método PUT</h1>
-    <h2>Altere o nome de um usuário existente pelo ID:</h2>
-    <div id="get-container2"></div>
-    <input id="novoIdPut" placeholder="Selecionar ID"><br>
-    <textarea id="novoNomePut" placeholder="Novo nome"></textarea><br>
-    <button id="enviarPut">Atualizar Usuário</button>
-
-    <h1>Método DELETE</h1>
-    <h2>Delete um usuário existente pelo ID:</h2>
-    <input id="idDelete" placeholder="Selecionar ID"><br>
-    <button id="btnDELETE">Deletar Usuário</button>
+    <div id="lista">
+        <button id="btnDELETE">X</button>
+    </div>
 
     
     <script src="script.js"></script>

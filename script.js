@@ -1,8 +1,8 @@
 // GET
 
-const container1 = document.getElementById("get-container"); //const que pega o elemento do HTML pelo ID
+const container1 = document.getElementById("lista"); //const que pega o elemento do HTML pelo ID
 
-async function getUsuarios() { //função que faz o GET na API
+async function mostrarUsuarios() { //função que faz o GET na API
   try { // o try "tenta" executar oque foi pedido
     const resposta = await fetch("http://localhost:3000/users"); // o fetch é usado para localizar o endereço da API em questão
     const dados = await resposta.json(); // transforma em objeto JS
@@ -13,9 +13,9 @@ async function getUsuarios() { //função que faz o GET na API
 
     // percorre todos os objetos do array
     for (let i = 0; i < dados.length; i++) {
-      const post = document.createElement("div");
+      const post = document.createElement("h1");
       //post.classList.add("usuario");
-      post.textContent = `Id: ${dados[i].id}, nome: ${dados[i].name}.`;
+      post.textContent = `Id: ${dados[i].id}, Nome: ${dados[i].nome}, CPF: ${dados[i].cpf}, Telefone: ${dados[i].telefone}.`;
 
       container1.appendChild(post);
     }
@@ -25,70 +25,37 @@ async function getUsuarios() { //função que faz o GET na API
   }
 }
 
-getUsuarios()
 
 // ---------------------------------  POST  ---------------------------------------
 
-const bntPOST = document.getElementById("enviarPost");
-const novoIdPost = document.getElementById("novoId");
-const novoNomePost = document.getElementById("novoNome");
+const bntPOST = document.getElementById("enviarPOST");
 
-async function postUsuarios() {
+async function adicionaUsuario() {
   try {
-    const id = novoIdPost.value.trim(); //Trim remove espaços em branco do iniciu e/ou fim do texto
-    const name = novoNomePost.value.trim();
+    const nome = document.getElementById("novoNome").value;
+    const telefone = document.getElementById("novoTelefone").value;
+    const cpf = document.getElementById("novoCpf").value;
+  
 
     const resposta = await fetch("http://localhost:3000/users", {
       method: "POST", // aqui informamos o metodo
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({id, name}), // aqui temos o corpo do objeto
+      body: JSON.stringify({nome, telefone, cpf}), // aqui temos o corpo do objeto
     });
     const dados = await resposta.json();
-    console.log("post criado", dados);
+    console.log("Usuário criado", dados);
 
-    getUsuarios();
+    mostrarUsuarios();
+
   } catch (erro){
-    console.error("Erro ao enviar post", erro);
+    console.error("Erro ao criar usuário", erro);
   }
 }
 
-bntPOST.addEventListener("click", postUsuarios);
+bntPOST.addEventListener("click", adicionaUsuario);
 
-
-
-// -------------------- PUT -------------------------
-
-const getContainer = document.getElementById("get-container2");
-
-const btnPUT = document.getElementById("enviarPut");
-const novoIdPut = document.getElementById("novoIdPut");
-const novoNomePut = document.getElementById("novoNomePut");
-
-async function putUsuarios() {
-  try {
-    const id = novoIdPut.value.trim();
-    const name = novoNomePut.value.trim();
-
-    const resposta = await fetch(`http://localhost:3000/users/${id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({id, name}),
-    });
-    const dados = await resposta.json();
-       
-    console.log("post criado", dados);
-
-    getUsuarios();
-  } catch (erro){
-    console.error("Erro ao enviar post", erro);
-  }
-}
-
-btnPUT.addEventListener("click", putUsuarios);
 
 
 // ----------------- DELETE -----------------------------------------------

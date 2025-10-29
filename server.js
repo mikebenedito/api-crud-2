@@ -6,11 +6,8 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
-let users = [
-  { id: 1, name: 'Luan' },
-  { id: 2, name: 'Maria' },
-  { id: 3, name: 'Mike' }
-];
+let users = [];
+
 const PORT = 3000;
 
 // Middleware para entender JSON
@@ -26,20 +23,25 @@ app.get('/users', (req, res) => {
 });
 
 // find = get (encontra)
+/*
 app.get('/users/:id', (req, res) => {
   const id = req.params.id;
   const user = users.find(u => u.id == id);
   res.json(user);
 });
+*/
 
-// push = post (enfia)
+// push = post (enfia/adiciona)
 app.post('/users', (req, res) => {
-  const newUser = req.body;
-  users.push(newUser);
-  res.status(201).json(newUser);
+  const { nome, cpf, telefone } = req.body;
+  const id = users.length > 0 ? users[users.length - 1].id + 1 : 1; //gera id sequencial automaticamente
+  const novoUser = {id, nome, cpf, telefone}
+  users.push(novoUser);
+  res.status(201).json(novoUser);
 });
 
 // put = map (troca)
+/*
 app.put('/users/:id', (req, res) => {
   const { id } = req.params;
   const updatedUser = req.body;
@@ -47,6 +49,7 @@ app.put('/users/:id', (req, res) => {
   users = users.map(u => u.id == id ? updatedUser : u);
   res.json(updatedUser);
 });
+*/
 
 //filter = delete (filtra oque eu não quero)
 app.delete('/users/:id', (req, res) => {
