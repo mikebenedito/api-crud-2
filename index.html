@@ -10,15 +10,16 @@
 
     <div id="formulario">
         <h2>Preencha os dados do úsuario nos campos abaixo:</h2>
-        <input id="novoNome" placeholder="Nome"><br>
-        <input id="novoTelefone" placeholder="telefone"><br>
-        <input id="novoCpf" placeholder="CPF"><br>
+        <label>Nome:</label><br>
+        <input id="novoNome" placeholder="João Maria José"><br>
+        <label>CPF:</label><br>
+        <input id="novoCpf" type="tel" maxlength="11" placeholder="000.000.000-00"><br>
+        <label>Telefone:</label><br>
+        <input id="novoTelefone" type="tel" maxlength="11" placeholder="(00)00000-0000"><br>
         <button id="enviarPOST">Enviar</button>
     </div>
 
-    <div id="lista">
-        <button id="btnDELETE">X</button>
-    </div>
+    <div id="lista"></div>
 
     
     <script src="script.js"></script>
