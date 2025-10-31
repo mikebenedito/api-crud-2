@@ -45,13 +45,14 @@ async function mostrarUsuarios() { //função que faz o GET na API
     console.log(dados);
 
     container.innerHTML = "";  // limpa os containers antes de preencher
-
+  
     for (let i = 0; i < dados.length; i++) {  // percorre todos os objetos do array
       const post = document.createElement("h1"); // cria um h1 no html
       post.classList.add("usuario"); // adiciona a class "usuario" ao elemento criado
       post.textContent = `Id: ${dados[i].id}, Nome: ${dados[i].nome}, CPF: ${dados[i].cpf}, Telefone: ${dados[i].telefone}.`;
-
+      
       const btnDelete = document.createElement("button"); // cria o botão "delete"
+      btnDelete.classList.add("btnDel");
       btnDelete.textContent = "X";
       btnDelete.addEventListener("click", () => deletarUsuario(dados[i].id)); // roda a função no click
 
@@ -64,6 +65,9 @@ async function mostrarUsuarios() { //função que faz o GET na API
     window.alert(erro);
   }
 }
+
+mostrarUsuarios()
+
 
 // -------------------------------- DELETE --------------------------------
 

@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>CRUD John vs Mike</title>
 </head>
 <body>
     <h1>Exercícios CRUD John vs Mike</h1>
 
     <div id="formulario">
-        <h2>Preencha os dados do úsuario nos campos abaixo:</h2>
-        <label>Nome:</label><br>
-        <input id="novoNome" placeholder="João Maria José"><br>
-        <label>CPF:</label><br>
-        <input id="novoCpf" type="tel" maxlength="11" placeholder="000.000.000-00"><br>
-        <label>Telefone:</label><br>
-        <input id="novoTelefone" type="tel" maxlength="11" placeholder="(00)00000-0000"><br>
-        <button id="enviarPOST">Enviar</button>
+        <div id="formElementos">
+            <h2>Preencha os dados do úsuario nos campos abaixo:</h2>
+            <label>Nome:</label><br>
+            <input id="novoNome" placeholder="João Maria José"><br>
+            <label>CPF:</label><br>
+            <input id="novoCpf" type="tel" maxlength="11" placeholder="000.000.000-00"><br>
+            <label>Telefone:</label><br>
+            <input id="novoTelefone" type="tel" maxlength="11" placeholder="(00)00000-0000"><br>
+            <button id="enviarPOST">Enviar</button>
+        </div>
     </div>
 
-    <div id="lista"></div>
-
+    <div id="boxlista">
+        <h1>Usuários cadastrados:</h1>
+        <div id="lista"></div>
+    </div>
     
     <script src="script.js"></script>
 

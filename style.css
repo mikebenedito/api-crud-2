@@ -1,0 +1,64 @@
+body{
+    background-color: hsl(0, 0%, 25%);
+    font-family: Sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: hsl(200, 100%, 100%);
+}
+
+#formulario{
+    background-color:hsl(0, 0%, 15%);
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+#formElementos{
+    color:hsl(200, 100%, 100%);
+    margin: 5px;
+}
+
+label{
+    color: hsl(202, 100%, 61%);
+}
+
+#enviarPOST{
+    margin-top: 5px;   
+    margin-bottom: 5px;
+}
+
+#enviarPOST:hover{
+    cursor: pointer;
+}
+
+#boxlista{
+    background-color: hsl(0, 0%, 15%);
+    width: 49%;
+    margin: auto;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.usuario{
+    text-align: left;
+    background-color: hsl(0, 0%, 20%);
+    padding-left: 5px;
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.btnDel{
+    background-color: hsl(0, 0%, 90%);
+    color: hsl(0, 100%, 25%);
+    border-radius: 5px;
+    border-color: hsl(0, 100%, 50%);
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+.btnDel:hover{
+    cursor: pointer;
+}
