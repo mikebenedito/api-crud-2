@@ -7,4 +7,4 @@
 - Fundo do layout deve ser do modo escuro => Preto ou cinza.
 - Inputs do formulário devem ser branco o texto dentro dele preto e suas labels azuis.
 - Lista de usuários deve ficar abaixo do formulário com um espaçamento para não ficar colado no formulário, dica: usar margin.
-- Na lista de formulários deve haver um botão de excluir do lado do nome do usuário e ao clicar nesse botão ele deve excluir o usuário, ele deve abrir um window.confirm e ao clicar em sim, ele excluir o usuário
+- Na lista de formulários deve haver um botão de excluir do lado do nome do usuário e ao clicar nesse botão ele deve excluir o usuário, ele deve abrir um window.confirm e ao clicar em sim, ele excluir o usuário.
